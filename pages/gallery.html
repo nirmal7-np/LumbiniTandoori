@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Lumbini Tandoori Bhojanalaya</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/gallery.css"> <!-- Separate Gallery CSS -->
+    <script defer src="../js/gallery.js"></script> <!-- Separate Gallery JS -->
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Photo Gallery</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li> <!-- Already inside /pages/ -->
+            <li><a href="../index.html#order-reservation">Order Online</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Our Gallery</h2>
+        <div class="gallery-container">
+            <!-- Images will be displayed here dynamically -->
+        </div>
+    </section>
+
+    <!-- Image Upload Form -->
+    <section id="upload">
+        <h2>Upload a New Image</h2>
+        <form id="upload-form">
+            <input type="file" id="image-upload" accept="image/*">
+            <button type="submit">Upload</button>
+        </form>
+        <p id="upload-status"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Lumbini Tandoori Bhojanalaya</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumbini Tandoori Bhojanalaya</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <img src="images/logo.png" alt="Lumbini Tandoori Logo" class="logo">
+        <h1>Authentic Nepali, Indian and Chinese Cuisine</h1>
+        <p>Kalimati-13, Kathmandu</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="pages/gallery.html">Gallery</a></li>
+            <li><a href="#order-reservation">Order Online</a></li>
+            <li><a href="#order-reservation">Reservation</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+
+    <div class="container">
+
+        <!-- About Us Section -->
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Welcome to <strong>Lumbini Tandoori Bhojanalaya</strong>, where tradition meets taste in the heart of Kalimati, Kathmandu.</p>
+            <p>Our chefs bring years of culinary expertise to create mouthwatering meals using fresh, locally sourced ingredients.</p>
+            <p>Whether you're craving a flavorful tandoori roti, a creamy butter chicken, or a traditional Nepali khana set, 
+               our menu is crafted to satisfy your taste buds. Dine in with us, place an order online, or reserve your table today!</p>
+        </section>
+
+        <!-- Banner -->
+        <section class="banner">
+            <img src="images/banner.jpg" alt="Delicious Food">
+        </section>
+
+        <!-- Popular Dishes Section -->
+        <section id="menu">
+            <h2>Popular Dishes</h2>
+            <div class="menu-grid">
+
+                <div class="menu-item" data-name="Butter Naan" data-price="50">
+                    <img src="images/menu-butter-naan.jpg" alt="Butter Naan">
+                    <h3>Butter Naan</h3>
+                    <p>Rs. 50 per piece</p>
+                    <button class="add-to-cart">Add to Order</button>
+                </div>
+
+                <div class="menu-item" data-name="Tandoori Roti" data-price="20">
+                    <img src="images/menu-tandoori-roti.jpg" alt="Tandoori Roti">
+                    <h3>Tandoori Roti</h3>
+                    <p>Rs. 20 per piece</p>
+                    <button class="add-to-cart">Add to Order</button>
+                </div>
+
+                <div class="menu-item" data-name="Chicken Butter Masala" data-price="250">
+                    <img src="images/menu-chicken-butter-masala.jpg" alt="Chicken Butter Masala">
+                    <h3>Chicken Butter Masala</h3>
+                    <p>Rs. 250</p>
+                    <button class="add-to-cart">Add to Order</button>
+                </div>
+
+                <div class="menu-item" data-name="Paneer Butter Masala" data-price="250">
+                    <img src="images/menu-paneer-butter-masala.jpg" alt="Paneer Butter Masala">
+                    <h3>Paneer Butter Masala</h3>
+                    <p>Rs. 250</p>
+                    <button class="add-to-cart">Add to Order</button>
+                </div>
+
+                <div class="menu-item" data-name="Chicken Jhol MoMo" data-price="240">
+                    <img src="images/menu-chicken-jhol-momo.jpg" alt="Chicken Jhol MoMo">
+                    <h3>Chicken Jhol MoMo</h3>
+                    <p>Rs. 240</p>
+                    <button class="add-to-cart">Add to Order</button>
+                </div>
+
+                <div class="menu-item" data-name="Rajma Curry" data-price="100">
+                    <img src="images/menu-rajma-curry.jpg" alt="Rajma Curry">
+                    <h3>Rajma Curry</h3>
+                    <p>Rs. 100</p>
+                    <button class="add-to-cart">Add to Order</button>
+                </div>
+
+            </div>
+
+            <a href="pages/full-menu.html" class="view-full-menu">View Full Menu</a>
+        </section>
+
+        <!-- Online Order and Reservations Section -->
+        <section id="order-reservation">
+            <h2>Order Online & Table Reservation</h2>
+            <p>Enjoy our delicious food from the comfort of your home or reserve a table for a wonderful dining experience.</p>
+
+            <div class="order-reservation-container">
+                <!-- Online Order Form -->
+                <div class="order-section">
+                    <h3>Place an Online Order</h3>
+                    <form action="order_process.php" method="post">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                        <textarea name="order_details" placeholder="Enter your order details" required></textarea>
+                        <button type="submit">Submit Order</button>
+                    </form>
+                </div>
+
+                <!-- Table Reservation Form -->
+                <div class="reservation-section">
+                    <h3>Reserve a Table</h3>
+                    <form action="reservation_process.php" method="post">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                        <input type="date" name="date" required>
+                        <input type="time" name="time" required>
+                        <input type="number" name="guests" placeholder="Number of Guests" required>
+                        <button type="submit">Reserve Table</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section id="map">
+            <h2>Find Us Here</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14131.217806462657!2d85.28259279676779!3d27.692438138108983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190001ff12d1%3A0x9c2e7fc55a27ba44!2sHotel%20Lumbini%20Tandoori%20Kalimati!5e0!3m2!1sen!2snp!4v1738405162148!5m2!1sen!2snp"
+                width="100%" height="450" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+
+<!-- Contact -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>📍 <a href="https://www.google.com/maps?q=Hotel+Lumbini+Tandoori+Kalimati" target="_blank">Kalimati, Kathmandu, Nepal</a></p>
+    <p>📞 <a href="tel:+9779841897584">+977 984-1897584</a></p>
+    <p>📧 <a href="mailto:lumbinitandoori7@gmail.com">lumbinitandoori7@gmail.com</a></p>
+
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+        <a href="https://www.facebook.com/Lumbinitandoorii" target="_blank">
+            <img src="images/facebook-logo.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/lumbinitandoorikalimati/" target="_blank">
+            <img src="images/instagram-logo.png" alt="Instagram">
+        </a>
+        <a href="https://wa.me/9779841897584" target="_blank">
+            <img src="images/whatsapp-logo.png" alt="WhatsApp">
+        </a>
+    </div>
+</section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Lumbini Tandoori Bhojanalaya</p>
+    </footer>
+
+</body>
+</html>

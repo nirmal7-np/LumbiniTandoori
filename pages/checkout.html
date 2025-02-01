@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Lumbini Tandoori Bhojanalaya</title>
+    <link rel="stylesheet" href="../css/checkout.css">
+    <script defer src="../js/checkout.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>🛒 Checkout</h1>
+        <p>Scan the QR code below and enter the transaction ID to confirm payment.</p>
+        <a href="full-menu.html" class="back-home">⬅ Back to Menu</a>
+    </header>
+
+    <section class="payment-options">
+        <h2>💳 Payment Options</h2>
+
+        <!-- eSewa Payment -->
+        <div class="payment-method">
+            <h3>eSewa Payment</h3>
+            <img src="../images/esewa-qr.jpg" alt="eSewa QR Code">
+            <p>🔹 Scan and pay via eSewa.</p>
+        </div>
+
+        <!-- Khalti Payment -->
+        <div class="payment-method">
+            <h3>Khalti Payment</h3>
+            <img src="../images/khalti-qr.jpg" alt="Khalti QR Code" onerror="this.style.display='none'">
+            <p>🔹 Scan and pay via Khalti.</p>
+        </div>
+
+        <!-- Fonepay Payment -->
+        <div class="payment-method">
+            <h3>Fonepay Payment</h3>
+            <img src="../images/fonepay-qr.jpg" alt="Fonepay QR Code" onerror="this.style.display='none'">
+            <p>🔹 Scan and pay via Fonepay.</p>
+        </div>
+    </section>
+
+    <!-- Payment Confirmation Section -->
+    <section class="confirmation">
+        <h2>✅ Payment Confirmation</h2>
+        <label for="transaction-id">Enter Transaction ID:</label>
+        <input type="text" id="transaction-id" placeholder="Enter transaction ID here" oninput="validatePayment()">
+        <button id="payment-done" onclick="confirmPayment()" disabled>Confirm Payment</button>
+        <p id="payment-message" class="hidden">🎉 Payment Confirmed! Thank you for your order. ✅</p>
+    </section>
+</body>
+</html>

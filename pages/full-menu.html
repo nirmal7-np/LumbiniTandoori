@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Menu - Lumbini Tandoori Bhojanalaya</title>
+    <link rel="stylesheet" href="../css/full-menu.css">
+    <script defer src="../js/full-menu.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>🍽 Full Menu</h1>
+        <p>Explore our complete range of delicious meals.</p>
+        <a href="../index.html" class="back-home">🏠 Back to Home</a>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="🔍 Search menu items...">
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="khana">🍛 Khana</button>
+        <button class="filter-btn" data-category="roti">🥖 Roti</button>
+        <button class="filter-btn" data-category="tarkari">🥦 Tarkari</button>
+        <button class="filter-btn" data-category="nonveg">🍗 Non-Veg</button>
+        <button class="filter-btn" data-category="paneer">🧀 Paneer</button>
+    </div>
+
+    <!-- Full Menu Section -->
+    <section class="full-menu">
+        <div class="menu-category" data-category="khana">
+            <h2>🍛 Khana Items</h2>
+            <ul>
+                <li data-name="Plain Khana Set" data-price="170">Plain Khana Set - Rs. 170/-</li>
+                <li data-name="Chicken Khana" data-price="250">Chicken Khana - Rs. 250/-</li>
+                <li data-name="Mutton Khana" data-price="400">Mutton Khana - Rs. 400/-</li>
+                <li data-name="Fish Khana" data-price="250">Fish Khana - Rs. 250/-</li>
+                <li data-name="Half Khana" data-price="100">Half Khana (One Bowl) - Rs. 100/-</li>
+                <li data-name="Plain Khana Special" data-price="280">Plain Khana Special - Rs. 280/-</li>
+                <li data-name="Chicken Khana Special" data-price="380">Chicken Khana Special - Rs. 380/-</li>
+                <li data-name="Mutton Khana Special" data-price="480">Mutton Khana Special - Rs. 480/-</li>
+            </ul>
+        </div>
+
+        <div class="menu-category" data-category="roti">
+            <h2>🥖 Roti Items (Per Piece)</h2>
+            <ul>
+                <li data-name="Plain Roti" data-price="20">Plain Roti - Rs. 20/-</li>
+                <li data-name="Butter Roti" data-price="30">Butter Roti - Rs. 30/-</li>
+                <li data-name="Plain Naan" data-price="40">Plain Naan - Rs. 40/-</li>
+                <li data-name="Butter Naan" data-price="50">Butter Naan - Rs. 50/-</li>
+                <li data-name="Aalu Naan" data-price="80">Aalu Naan - Rs. 80/-</li>
+                <li data-name="Aalu Parauthe" data-price="70">Aalu Parauthe - Rs. 70/-</li>
+                <li data-name="Lachha Parauthe" data-price="70">Lachha Parauthe - Rs. 70/-</li>
+                <li data-name="Garlic Naan" data-price="150">Garlic Naan - Rs. 150/-</li>
+                <li data-name="Veg Naan" data-price="100">Veg Naan - Rs. 100/-</li>
+                <li data-name="Paneer Naan" data-price="150">Paneer Naan - Rs. 150/-</li>
+                <li data-name="Egg Naan" data-price="100">Egg Naan - Rs. 100/-</li>
+                <li data-name="Chicken Kima Naan" data-price="150">Chicken Kima Naan - Rs. 150/-</li>
+            </ul>
+        </div>
+
+        <div class="menu-category" data-category="tarkari">
+            <h2>🥦 Tarkari Items (Per Bowl)</h2>
+            <ul>
+                <li data-name="Dal Fry" data-price="80">Dal Fry - Rs. 80/-</li>
+                <li data-name="Aalu Kerau" data-price="60">Aalu Kerau - Rs. 60/-</li>
+                <li data-name="Dal Tadka" data-price="150">Dal Tadka - Rs. 150/-</li>
+                <li data-name="Rajma" data-price="100">Rajma - Rs. 100/-</li>
+                <li data-name="Rajma Masala" data-price="150">Rajma Masala - Rs. 150/-</li>
+                <li data-name="Aalu Jira" data-price="100">Aalu Jira (Fry) - Rs. 100/-</li>
+                <li data-name="Aaludam" data-price="120">Aaludam - Rs. 120/-</li>
+            </ul>
+        </div>
+
+        <div class="menu-category" data-category="nonveg">
+            <h2>🍗 Non-Veg Items (Per Bowl)</h2>
+            <ul>
+                <li data-name="Chicken Curry" data-price="160">Chicken Curry - Rs. 160/-</li>
+                <li data-name="Mutton Curry" data-price="300">Mutton Curry - Rs. 300/-</li>
+                <li data-name="Chicken Butter Masala" data-price="250">Chicken Butter Masala - Rs. 250/-</li>
+                <li data-name="Mutton Butter Masala" data-price="350">Mutton Butter Masala - Rs. 350/-</li>
+                <li data-name="Egg Curry" data-price="100">Egg Curry - Rs. 100/-</li>
+                <li data-name="Omelette Curry" data-price="150">Omelette Curry - Rs. 150/-</li>
+                <li data-name="Omelette" data-price="80">Omelette - Rs. 80/-</li>
+                <li data-name="Fish Curry" data-price="250">Fish Curry - Rs. 250/-</li>
+            </ul>
+        </div>
+
+        <div class="menu-category" data-category="paneer">
+            <h2>🧀 Paneer Items (Per Bowl)</h2>
+            <ul>
+                <li data-name="Muttor Paneer" data-price="150">Muttor Paneer - Rs. 150/-</li>
+                <li data-name="Palak Paneer" data-price="150">Palak Paneer - Rs. 150/-</li>
+                <li data-name="Shahi Paneer" data-price="150">Shahi Paneer - Rs. 150/-</li>
+                <li data-name="Mix Veg" data-price="150">Mix Veg - Rs. 150/-</li>
+                <li data-name="Chana Masala" data-price="150">Chana Masala - Rs. 150/-</li>
+                <li data-name="Paneer Butter Masala" data-price="250">Paneer Butter Masala - Rs. 250/-</li>
+                <li data-name="Aalu Paneer" data-price="150">Aalu Paneer - Rs. 150/-</li>
+                <li data-name="Paneer Bhujia" data-price="300">Paneer Bhujia - Rs. 300/-</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Order Summary -->
+    <div class="order-summary">
+        <h3>🛒 Your Order</h3>
+        <ul id="order-list"></ul>
+        <p>Total: Rs. <span id="total-price">0</span></p>
+        <button id="checkout" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+    </div>
+
+</body>
+</html>
