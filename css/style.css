@@ -19,30 +19,60 @@ html, body {
     overflow-x: hidden; /* Ensures no element causes horizontal scroll */
 }
 
-/* Header */
+/* Header Styling */
 header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows elements to wrap on smaller screens */
     background: linear-gradient(90deg, #ee1c25, #ee1c25);
     color: white;
-    padding: 0px;
+    padding: 15px 20px;
     text-align: center;
     border-bottom: 0px;
+    position: relative;
+    z-index: 1001; /* Ensures header stays above nav */
 }
 
-.logo { 
-    max-width: 800px; /* Adjusted size */
-    margin-bottom: 0px;
+/* Logo */
+.logo {
+    max-width: 200px; /* Default size */
+    height: auto;
+    margin-right: 20px;
 }
 
+/* Header Text */
 header h1 {
-    font-size: 18px;
+    font-size: 24px;
     margin: 5px 0;
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 }
 
 header p {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
+    margin-top: 5px;
+}
+
+/* Responsive Header Layout */
+@media (max-width: 900px) {
+    header {
+        flex-direction: column; /* Stack logo and text on smaller screens */
+        text-align: center;
+    }
+
+    .logo {
+        max-width: 150px; /* Smaller logo for mobile */
+        margin-right: 0;
+    }
+}
+
+/* Ensure Header Appears Before Nav in Desktop Mode */
+@media (min-width: 901px) {
+    header {
+        order: -1; /* Moves header before nav */
+    }
 }
 
 /* Navigation */
