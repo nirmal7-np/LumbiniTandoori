@@ -22,6 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (navToggle && navMenu) {
         navToggle.addEventListener("click", function () {
             navMenu.classList.toggle("active");
+
+            // Change button text to "X" when active
+            if (navMenu.classList.contains("active")) {
+                navToggle.innerHTML = "✖"; // Close icon
+            } else {
+                navToggle.innerHTML = "☰"; // Hamburger icon
+            }
         });
     }
 
@@ -29,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     navLinks.forEach(link => {
         link.addEventListener("click", function () {
             navMenu.classList.remove("active");
+            navToggle.innerHTML = "☰"; // Reset to hamburger icon
         });
     });
 
@@ -92,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("scroll", function () {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop) {
+        if (scrollTop > lastScrollTop + 50) { // Added threshold to prevent frequent hiding
             navbar.style.top = "-80px"; // Hide nav when scrolling down
         } else {
             navbar.style.top = "0"; // Show nav when scrolling up
