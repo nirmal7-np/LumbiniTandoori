@@ -94,7 +94,7 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
-/* Mobile Navigation */
+/* Mobile Navigation Toggle Button */
 .nav-toggle {
     display: none;
     font-size: 28px;
@@ -108,42 +108,36 @@ nav ul li a:hover {
     z-index: 1100;
 }
 
-/* Mobile Navigation */
-@media (max-width: 900px) {
-    nav {
-        text-align: left;
-        padding: 15px;
-    }
-
-    /* Toggle Button */
+/* Desktop Mode: Hide Toggle */
+@media (min-width: 901px) {
     .nav-toggle {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        background: #bf360c;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        padding: 10px 0;
+        display: none; /* Hide in desktop mode */
+    }
+}
+
+/* Mobile Mode */
+@media (max-width: 900px) {
+    .nav-toggle {
+        display: block; /* Show toggle button on mobile */
     }
 
     /* Hide default menu */
     nav ul {
-        display: none;
+        display: flex;
         flex-direction: column;
         align-items: center;
         background: #bf360c;
         width: 100%;
         position: absolute;
-        top: 60px;
+        top: -100vh; /* Hidden by default */
         left: 0;
         padding: 10px 0;
+        transition: top 0.4s ease-in-out; /* Smooth slide animation */
     }
 
     /* Show menu when active */
     nav ul.active {
-        display: flex;
+        top: 60px; /* Slides down */
     }
 
     nav ul li {
