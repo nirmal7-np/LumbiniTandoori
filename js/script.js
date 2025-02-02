@@ -1,19 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll("nav ul li a");
-    navLinks.forEach(link => {
-        link.addEventListener("click", function (event) {
-            event.preventDefault();
-            const targetId = this.getAttribute("href").substring(1);
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 50,
-                    behavior: "smooth"
-                });
+    const navToggle = document.querySelector(".nav-toggle");
+    const navMenu = document.querySelector("nav ul");
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+
+            // Toggle between hamburger and cross icon
+            if (navMenu.classList.contains("active")) {
+                navToggle.innerHTML = "✖"; // Cross icon
+            } else {
+                navToggle.innerHTML = "☰"; // Hamburger icon
             }
         });
-    });
+
+        // Close menu when clicking a menu link
+        document.querySelectorAll("nav ul li a").forEach(link => {
+            link.addEventListener("click", function () {
+                navMenu.classList.remove("active");
+                navToggle.innerHTML = "☰"; // Reset to hamburger icon
+            });
+        });
+    }
+});
 
     // Mobile Navigation Toggle
     const navToggle = document.querySelector(".nav-toggle");
