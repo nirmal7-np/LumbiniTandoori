@@ -95,18 +95,9 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
-/* Mobile Navigation Toggle */
+/* Hide the toggle button by default */
 .nav-toggle {
     display: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: white;
-    padding: 10px;
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    background: none;
-    border: none;
 }
 
 /* Responsive Design */
@@ -116,9 +107,18 @@ nav ul li a:hover {
         padding: 15px;
     }
 
-    /* Show hamburger menu */
+    /* Toggle Menu */
     .nav-toggle {
         display: block;
+        position: fixed;
+        left: 10px;
+        top: 10px;
+        font-size: 28px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        z-index: 1100;
     }
 
     /* Hide default menu */
@@ -137,6 +137,10 @@ nav ul li a:hover {
     /* Show menu when active */
     nav ul.active {
         display: flex;
+        position: fixed;
+        width: 100%;
+        top: 60px;
+        left: 0;
     }
 
     nav ul li {
