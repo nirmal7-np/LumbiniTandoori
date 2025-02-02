@@ -21,6 +21,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 navToggle.innerHTML = "☰"; // Reset to hamburger icon
             });
         });
+
+        // Hide menu if clicking outside
+        document.addEventListener("click", function (event) {
+            if (!navMenu.contains(event.target) && !navToggle.contains(event.target)) {
+                navMenu.classList.remove("active");
+                navToggle.innerHTML = "☰"; // Reset to hamburger icon
+            }
+        });
     }
 });
 
