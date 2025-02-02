@@ -1,21 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Navigation Toggle Elements
     const navToggle = document.querySelector(".nav-toggle");
     const navMenu = document.querySelector("nav ul");
+    const navLinks = document.querySelectorAll("nav ul li a");
 
     if (navToggle && navMenu) {
         navToggle.addEventListener("click", function () {
             navMenu.classList.toggle("active");
 
-            // Toggle between hamburger and cross icon
-            if (navMenu.classList.contains("active")) {
-                navToggle.innerHTML = "✖"; // Cross icon
-            } else {
-                navToggle.innerHTML = "☰"; // Hamburger icon
-            }
+            // Toggle between hamburger (☰) and cross (✖) icon
+            navToggle.innerHTML = navMenu.classList.contains("active") ? "✖" : "☰";
         });
 
         // Close menu when clicking a menu link
-        document.querySelectorAll("nav ul li a").forEach(link => {
+        navLinks.forEach(link => {
             link.addEventListener("click", function () {
                 navMenu.classList.remove("active");
                 navToggle.innerHTML = "☰"; // Reset to hamburger icon
@@ -30,30 +28,19 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-});
 
-    // Mobile Navigation Toggle
-    const navToggle = document.querySelector(".nav-toggle");
-    const navMenu = document.querySelector("nav ul");
-
-    if (navToggle && navMenu) {
-        navToggle.addEventListener("click", function () {
-            navMenu.classList.toggle("active");
-
-            // Change button text to "X" when active
-            if (navMenu.classList.contains("active")) {
-                navToggle.innerHTML = "✖"; // Close icon
-            } else {
-                navToggle.innerHTML = "☰"; // Hamburger icon
-            }
-        });
-    }
-
-    // Close menu when clicking a link (for better UX)
+    // Smooth scrolling for navigation links
     navLinks.forEach(link => {
-        link.addEventListener("click", function () {
-            navMenu.classList.remove("active");
-            navToggle.innerHTML = "☰"; // Reset to hamburger icon
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 50,
+                    behavior: "smooth"
+                });
+            }
         });
     });
 
@@ -117,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("scroll", function () {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop + 50) { // Added threshold to prevent frequent hiding
+        if (scrollTop > lastScrollTop + 50) { // Prevents frequent hiding
             navbar.style.top = "-80px"; // Hide nav when scrolling down
         } else {
             navbar.style.top = "0"; // Show nav when scrolling up
