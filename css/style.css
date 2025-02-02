@@ -46,15 +46,20 @@ header p {
 }
 
 /* Navigation */
+/* Navigation Bar */
 nav {
     background: #bf360c;
-    padding: 15px;
+    padding: 15px 20px; /* Adjusted padding */
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    max-width: 100%;
-    overflow-x: hidden;
+    position: fixed; /* Keeps navbar fixed at the top */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
+/* Navigation Menu */
 nav ul {
     list-style: none;
     padding: 0;
@@ -64,10 +69,12 @@ nav ul {
     flex-wrap: wrap;
 }
 
+/* Menu Items */
 nav ul li {
-    margin: 0 20px;
+    margin: 0 15px; /* Reduced margin for better spacing */
 }
 
+/* Menu Links */
 nav ul li a {
     color: white;
     text-decoration: none;
@@ -76,47 +83,67 @@ nav ul li a {
     padding: 12px 18px;
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
+    display: inline-block; /* Ensures clickable area is consistent */
 }
 
+/* Hover Effect */
 nav ul li a:hover {
     background: #ff7043;
     color: #222;
     border-radius: 12px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-/* Mobile Navigation */
+/* Mobile Navigation Toggle */
 .nav-toggle {
     display: none;
     font-size: 28px;
     cursor: pointer;
     color: white;
     padding: 10px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    background: none;
+    border: none;
 }
 
-@media (max-width: 768px) {
-    .nav-toggle {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 15px;
+/* Responsive Design */
+@media (max-width: 900px) {
+    nav {
+        text-align: left;
+        padding: 15px;
     }
 
+    /* Show hamburger menu */
+    .nav-toggle {
+        display: block;
+    }
+
+    /* Hide default menu */
     nav ul {
         display: none;
         flex-direction: column;
+        align-items: center;
         background: #bf360c;
         width: 100%;
         position: absolute;
         top: 60px;
         left: 0;
+        padding: 10px 0;
     }
 
+    /* Show menu when active */
     nav ul.active {
         display: flex;
     }
+
+    nav ul li {
+        margin: 10px 0; /* Space between items */
+    }
 }
+
 
 /* Banner */
 .banner img {
