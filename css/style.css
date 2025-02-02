@@ -23,7 +23,7 @@ html, body {
 header {
     background: linear-gradient(90deg, #ee1c25, #ee1c25);
     color: white;
-    padding: 20px;
+    padding: 0px;
     text-align: center;
     border-bottom: 5px solid #ffccbc;
 }
