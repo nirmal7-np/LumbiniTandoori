@@ -29,7 +29,7 @@ header {
 }
 
 .logo { 
-    max-width: 800px;  /* Adjusted size */
+    max-width: 800px; /* Adjusted size */
     margin-bottom: 0px;
 }
 
@@ -46,10 +46,9 @@ header p {
 }
 
 /* Navigation */
-/* Navigation Bar */
 nav {
     background: #bf360c;
-    padding: 15px 20px; /* Adjusted padding */
+    padding: 15px 20px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     position: fixed; /* Keeps navbar fixed at the top */
@@ -71,7 +70,7 @@ nav ul {
 
 /* Menu Items */
 nav ul li {
-    margin: 0 15px; /* Reduced margin for better spacing */
+    margin: 0 15px;
 }
 
 /* Menu Links */
@@ -83,7 +82,7 @@ nav ul li a {
     padding: 12px 18px;
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
-    display: inline-block; /* Ensures clickable area is consistent */
+    display: inline-block;
 }
 
 /* Hover Effect */
@@ -95,7 +94,7 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
-/* Hide the toggle button by default */
+/* Mobile Navigation */
 .nav-toggle {
     display: none;
 }
@@ -107,7 +106,7 @@ nav ul li a:hover {
         padding: 15px;
     }
 
-    /* Toggle Menu */
+    /* Toggle Button */
     .nav-toggle {
         display: block;
         position: fixed;
@@ -144,10 +143,9 @@ nav ul li a:hover {
     }
 
     nav ul li {
-        margin: 10px 0; /* Space between items */
+        margin: 10px 0;
     }
 }
-
 
 /* Banner */
 .banner img {
@@ -300,19 +298,8 @@ footer {
 }
 
 /* Social Media Icons */
-.social-icons {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-
 .social-icons img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-}
-
-.social-icons a:hover {
-    transform: scale(1.15);
 }
