@@ -1,29 +1,27 @@
-/* Prevent horizontal scroll */
-html, body {
-    overflow-x: hidden;
-    width: 100%;
-}
-
 /* General Styles */
-body {
+html, body {
     font-family: 'Poppins', sans-serif;
     background-color: #f5e1c0;
     text-align: center;
     margin: 0;
     padding: 0;
     color: #333;
+    overflow-x: hidden; /* Fixes horizontal scroll issue */
+    width: 100%;
 }
 
-/* Container */
+/* Prevent container overflow */
 .container {
     width: 85%;
+    max-width: 100%;
     margin: auto;
     padding: 40px 0;
+    overflow-x: hidden; /* Ensures no element causes horizontal scroll */
 }
 
 /* Header */
 header {
-    background: linear-gradient(90deg,  #ee1c25, #ee1c25);
+    background: linear-gradient(90deg, #ee1c25, #ee1c25);
     color: white;
     padding: 20px;
     text-align: center;
@@ -31,7 +29,8 @@ header {
 }
 
 .logo { 
-    max-width: 1800px;
+    max-width: 250px;  /* Adjusted size */
+    height: auto;
     margin-bottom: 0px;
 }
 
@@ -53,25 +52,29 @@ nav {
     padding: 15px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    display: inline-block;
-    margin: 0 35px; /* Increased spacing between menu items */
+    margin: 0 20px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: 700;
-    font-size: 20px; /* Increased font size */
-    padding: 15px 22px; /* More padding for better button appearance */
+    font-size: 18px;
+    padding: 12px 18px;
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
 }
@@ -81,14 +84,38 @@ nav ul li a:hover {
     color: #222;
     border-radius: 12px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-    transform: scale(1.1); /* Slight zoom effect on hover */
+    transform: scale(1.1);
 }
 
-/* Responsive Design */
+/* Mobile Navigation */
+.nav-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+}
+
 @media (max-width: 768px) {
-    nav ul li {
+    .nav-toggle {
         display: block;
-        margin: 15px 0; /* Stack items vertically for mobile */
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #bf360c;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    nav ul.active {
+        display: flex;
     }
 }
 
@@ -99,6 +126,7 @@ nav ul li a:hover {
     height: auto;
     object-fit: cover;
     border-radius: 12px;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Popular Dishes */
@@ -110,7 +138,6 @@ nav ul li a:hover {
     padding: 30px 0;
 }
 
-/* Menu Items */
 .menu-item {
     width: 260px;
     text-align: center;
@@ -180,12 +207,6 @@ button:hover {
     width: 85%;
 }
 
-#order-reservation h2 {
-    color: #bf360c;
-    font-size: 28px;
-    margin-bottom: 25px;
-}
-
 .order-reservation-container {
     display: flex;
     justify-content: space-around;
@@ -200,12 +221,6 @@ button:hover {
     border-radius: 12px;
     text-align: center;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.order-section h3, .reservation-section h3 {
-    color: #bf360c;
-    font-size: 22px;
-    margin-bottom: 18px;
 }
 
 form input, form textarea {
@@ -232,19 +247,6 @@ form button:hover {
     background: #ff5722;
 }
 
-/* Map */
-#map {
-    width: 88%;
-    margin: auto;
-    text-align: center;
-    padding: 30px;
-}
-
-#map h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
 /* Contact */
 #contact {
     width: 88%;
@@ -254,23 +256,6 @@ form button:hover {
     background: #ffebd6;
     border-radius: 12px;
     box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
-}
-
-#contact p {
-    font-size: 18px;
-    margin: 12px 0;
-}
-
-#contact a {
-    color: #d84315;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s ease-in-out;
-}
-
-#contact a:hover {
-    color: #ff5722;
-    text-decoration: underline;
 }
 
 /* Footer */
@@ -290,11 +275,6 @@ footer {
     display: flex;
     justify-content: center;
     gap: 25px;
-}
-
-.social-icons a {
-    display: inline-block;
-    transition: transform 0.3s ease-in-out;
 }
 
 .social-icons img {
