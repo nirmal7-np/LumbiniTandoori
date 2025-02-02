@@ -15,6 +15,23 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Mobile Navigation Toggle
+    const navToggle = document.querySelector(".nav-toggle");
+    const navMenu = document.querySelector("nav ul");
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+        });
+    }
+
+    // Close menu when clicking a link (for better UX)
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            navMenu.classList.remove("active");
+        });
+    });
+
     // Order Form Submission
     const orderForm = document.querySelector("form[action='order_process.php']");
     if (orderForm) {
@@ -95,4 +112,3 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-
